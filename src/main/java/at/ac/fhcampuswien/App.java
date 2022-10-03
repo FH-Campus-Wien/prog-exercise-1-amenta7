@@ -13,7 +13,7 @@ public class App {
     public void helloRobot(){
         System.out.println("0123456789012345678901");
         System.out.println("         __");
-        System.out.println( "_(\\     |@@|");
+        System.out.println( " _(\\    |@@|");
         System.out.println("(__/\\__ \\--/ __");
         System.out.println("   \\___|----|  |   __");
         System.out.println("       \\ }{ /\\ )_ / _\\");
@@ -70,21 +70,17 @@ public class App {
     //todo Task 6
     public void compareTwoNumbers(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("x: ");
-        int x = scanner.nextInt();
-        System.out.print("y: ");
-        int y = scanner.nextInt();
+        System.out.print("n1: ");
+        int n1 = scanner.nextInt();
+        System.out.print("n2: ");
+        int n2 = scanner.nextInt();
 
-        if(x > y) {
-            System.out.println("x > y");
-        }
-
-        if(y > x) {
-            System.out.println("y > x");
-        }
-
-        if(x == y) {
-            System.out.println("x == y");
+        if(n1 > n2) {
+            System.out.println("n1 > n2");
+        } else if(n2 > n1) {
+            System.out.println("n2 > n1");
+        } else if(n1 == n2) {
+            System.out.println("n1 == n2");
         }
     }
 
@@ -114,17 +110,15 @@ public class App {
         if(rev >= 80000 && rev < 100000) {
             System.out.println("Excellent Sales Revenue");
         }
-
-
     }
 
     //todo Task 8
     public void getCommissionRate(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter CommissionClass: ");
-        int sales = scanner.nextInt();
+        int provision = scanner.nextInt();
 
-        switch(sales) {
+        switch(provision) {
             case 1:
                 System.out.println("Your Commission Rate was set to 0.01");
                 break;
@@ -142,7 +136,7 @@ public class App {
                 break;
 
             default:
-                System.out.println("Your Commission Rate was set to 0.00");
+                System.out.println("Your Commission Rate was set to 0.0");
         }
     }
 
@@ -161,9 +155,18 @@ public class App {
     }
 
     //todo Task 10
-    public void transposedNumbers(){
+    public void transposedNumbers() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Number: ");
+        int number = scanner.nextInt();
+
+        if (number < 1000 && number > -1000) {
+            int third_digit = number % 10;
+            int second_digit = (number / 10) % 10;
+            int first_digit = (number / 100) % 10;
+            int transnum = third_digit * 100 + second_digit * 10 + first_digit;
+            System.out.println(transnum);
+        }
     }
 
 
